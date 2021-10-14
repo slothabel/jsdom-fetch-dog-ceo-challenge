@@ -11,7 +11,7 @@ function loadImages(){
    .then(resp => resp.json())
 //    .then(result => console.log(result.message));
    .then(function (result) {
-    for (const element of result[message]) {
+    for (const element of result.message) {
         addImage(element);
       };
        });
@@ -20,6 +20,7 @@ function loadImages(){
 function addImage(image){
     // grab image container 
     let imageContainer = document.getElementById('dog-image-container')
+    let newImg = document.createElement('img')
     // add image to container
-    imageContainer.innerHTML = `<img src=${image}/>`;
+    newImg.src = `${image}`;
 }
